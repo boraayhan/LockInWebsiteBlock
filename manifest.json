@@ -1,0 +1,38 @@
+{
+    "name": "LockIN Website Blocker",
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "manifest_version": 3,
+    "version": "0.1",
+    "description": "Block websites and LOCK IN! The academic comeback is waiting for you, chief!",
+    "permissions": [
+        "activeTab",
+        "scripting",
+        "storage"
+    ],
+    "host_permissions": [
+        "http://*/*",
+        "https://*/*"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "worker.js"
+            ]
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "img.png"
+            ],
+            "matches": [
+                "<all_urls>"
+            ]
+        }
+    ]
+}
